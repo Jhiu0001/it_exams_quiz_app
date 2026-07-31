@@ -1,19 +1,18 @@
 # Databricks Machine Learning Professional Quiz App
-# DBML_PRO_Quiz.v0.1.6 - James Hiu - Dec.30.2025
+# DBML_PRO_Quiz.v0.1.7 - James Hiu - May.05.2026
 
 A Flask-based quiz application designed to deliver structured, repeatable quizzes from JSON-based test banks.  
 The app supports both multiple-choice and multi-select questions, deterministic answer shuffling, and configurable quiz lengths.
 
-Special thanks to
-Ahmed Abrar - https://www.linkedin.com/in/ahmad-abrar-ab249aa/
-Corbin Hudson - https://www.linkedin.com/in/corbinhudson/
-Rob Young - https://www.linkedin.com/in/rob-young-83247b41/
 ---
 
-## Latest Updates v0.1.6
+## Latest Updates v0.1.7
 
-- Text formatting edits to several questions in the test bank upon review.
-- quiz.py, small fix to read from text_bank, away from user_testing during development of this app.
+- Updated test_bank questions, 2026 questions (Moved older test resources to archive)
+- Updated quiz.html to better display code blocks in questions
+- Updated quiz_end.html to include an 'exit' button
+- Updated test_question_template.json to handle questions having style: 'text, code block, text' 
+- Updated quiz.py to handle updated code that formats questions better.
 
 ---
 
@@ -33,11 +32,13 @@ Rob Young - https://www.linkedin.com/in/rob-young-83247b41/
 ## Project Structure
 db_ml_pro_quiz_app/
 ├─ quiz.py # Flask application logic
-├─ templates/
+├─ _templates/
 │ ├─ quiz.html # Main quiz interface
 │ ├─ quiz_start.html # Quiz configuration page
 │ ├─ quiz_end.html # Final score summary
-│ └─ test_question_template.json
+│ └─ test_question_template.json #a template for users to copy,paste and add new questions
+├─ archive/
+│ ├─ old_exams.json # outdated questions are placed here.
 ├─ test_bank/ # JSON test banks
 │ ├─ Q1-Q10.json # questions are sourced from paid mock exams provider sites
 │ ├─ Q11-Q20.json # I try to keep it to 10 questions per file for readability
@@ -56,9 +57,10 @@ db_ml_pro_quiz_app/
 5. Scores and progress are tracked using Flask sessions
 6. Explanations are shown for incorrect answers
 
----
+## User Notes
+- while editing json files (e.g test bank), Alt + Z, enables word wrap.
 
-## Running the App Locally
+---
 
 ### Prerequisites
 - Python 3.9+

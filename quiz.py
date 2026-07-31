@@ -4,7 +4,7 @@ import random
 import string
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="_templates")
 app.secret_key = "your-secret-key"
 
 # ----------------------------------------------------
@@ -14,8 +14,8 @@ app.secret_key = "your-secret-key"
 # Absolute path to the folder where this project lives
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-#BANK_DIR = os.path.join(BASE_DIR, "user_testing") #Switch as necessary
-BANK_DIR = os.path.join(BASE_DIR, "test_bank") #Switch as necessary
+BANK_DIR = os.path.join(BASE_DIR, "user_testing") #Switch as necessary
+#BANK_DIR = os.path.join(BASE_DIR, "test_bank") #Switch as necessary
 
 all_questions = []
 
@@ -150,6 +150,23 @@ def quiz():
 def reset():
     session.clear()
     return redirect(url_for("quiz"))
+
+@app.route("/reload")
+def reload_questions():
+    global all_questions, question_lookup
+
+    all_questions = []
+    for filename in sorted(os.listdir(BANK_DIR)):
+        if filename.endswith(".json"):
+            with open(os.path.join(BANK_DIR, filename), "r", encoding="utf-8") as f:
+                all_questions.extend(json.load(f))
+
+    question_lookup = {q["question_id"]: q for q in all_questions}
+
+@app.route("/exit")
+def exit_quiz():
+    session.clear()
+    return redirect(url_for("start_quiz"))
 
 if __name__ == "__main__":
     app.run(debug=True)

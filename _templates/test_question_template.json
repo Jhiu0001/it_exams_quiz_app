@@ -1,0 +1,39 @@
+[
+  {
+  "question_id": "examsource_exam#_question#",
+  "content": [
+    {
+      "type": "text",
+      "value": ""
+    },
+    {
+      "type": "code",
+      "value": ""
+    }
+  ],
+  "type": "MC",
+  "choices": [
+    {"id": 0, "text": ""},
+    {"id": 1, "text": ""},
+    {"id": 2, "text": ""},
+    {"id": 3, "text": ""},
+    {"id": 4, "text": ""}
+  ],
+  "ans_id": 0,
+  "explanation": ""
+  },
+  {
+    "question_id":"examsource_exam#_question#",
+    "question": "",
+    "type":"MS",
+    "choices": [
+      {"id": 0, "text": ""},
+      {"id": 1, "text": ""},
+      {"id": 2, "text": ""},
+      {"id": 3, "text": ""},
+      {"id": 4, "text": ""}
+    ],
+    "ans_ids":[-1,-2],
+    "explanation":""
+  }
+]

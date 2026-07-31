@@ -55,7 +55,15 @@
     <div class="end-container">
         <h2>🎉 Quiz Finished!</h2>
         <p>Your score: {{ score }}/{{ total }}</p>
-        <a href="{{ url_for('quiz') }}">Try Again</a>
+        <div style="display: flex; gap: 15px; justify-content: center;">
+            <a href="{{ url_for('start_quiz') }}">
+                Try Again
+            </a>
+
+            <a href="{{ url_for('exit_quiz') }}">
+                Exit Quiz
+            </a>
+        </div>
     </div>
 </body>
 </html>

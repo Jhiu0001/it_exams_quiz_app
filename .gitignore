@@ -10,6 +10,9 @@ env/
 # Flask
 instance/
 
+# Project files
+archive/
+
 # OS
 .DS_Store
 Thumbs.db

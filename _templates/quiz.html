@@ -20,13 +20,21 @@
             max-width: 650px;
             width: 100%;
         }
-
         .question-text {
-            white-space: pre-line;   /* preserves \n line breaks */
             font-size: 1.05em;
             line-height: 1.5;
             margin-bottom: 15px;
-}
+        }
+        .question-text p {
+            margin: 5px 0;
+        }
+        .code-block {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 6px;
+            white-space: pre-wrap;
+        }
         .result {
             font-weight: bold;
             margin: 15px 0;
@@ -83,7 +91,22 @@
     </p>
 
     <div class="question-text">
-        {{ question.question }}
+        {% if question.content %}
+            {% for block in question.content %}
+                
+                {% if block.type == "text" %}
+                    <p>{{ block.value | replace('\n', '<br>') | safe }}</p>
+
+                {% elif block.type == "code" %}
+                    <pre class="code-block">{{ block.value.strip() }}</pre>
+
+                {% endif %}
+
+            {% endfor %}
+        {% else %}
+            <!-- fallback for old questions -->
+            {{ question.question }}
+        {% endif %}
     </div>
 
     <!-- RESULT -->
