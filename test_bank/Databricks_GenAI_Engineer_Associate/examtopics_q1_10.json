@@ -1,0 +1,174 @@
+[
+  {
+    "question_id":"examtopics_q1",
+    "question": "A Generative Al Engineer has created a RAG application to look up answers to questions about a series of fantasy novels that are being asked on the author's web forum. The fantasy novel texts are chunked and embedded into a vector store with metadata (page number, chapter number, book title), retrieved with the user's query, and provided to an LLM for response generation. The Generative AI Engineer used their intuition to pick the chunking strategy and associated configurations but now wants to more methodically choose the best values.\n\nTWO strategies should the Generative AI Engineer take to optimize their chunking strategy and parameters? (Choose two.)",
+    "type":"MS",
+    "choices": [
+      {"id": 0, "text": "Change embedding models and compare performance."},
+      {"id": 1, "text": "Add a classifier for user queries that predicts which book will best contain the answer. Use this to filter retrieval."},
+      {"id": 2, "text": "Choose an appropriate evaluation metric (such as recall or NDCG) and experiment with changes in the chunking strategy, such as splitting chunks by paragraphs or chapters. Choose the strategy that gives the best performance metric."},
+      {"id": 3, "text": "Pass known questions and best answers to an LLM and instruct the LLM to provide the best token count. Use a summary statistic (mean, median, etc.) of the best token counts to choose chunk size."},
+      {"id": 4, "text": "Create an LLM-as-a-judge metric to evaluate how well previous questions are answered by the most appropriate chunk. Optimize the chunking parameters based upon the values of the metric."}
+    ],
+    "ans_ids":[2,4],
+    "explanation":""
+  },
+  {
+    "question_id": "examtopics_q2",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is designing a RAG application for answering user questions on technical regulations as they learn a new sport. What are the steps needed to build this RAG application and deploy it?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": " Ingest documents from a source –> Index the documents and saves to Vector Search –> User submits queries against an LLM –> LLM retrieves relevant documents –> Evaluate model –> LLM generates a response –> Deploy it using Model Serving"},
+      {"id": 1, "text": "Ingest documents from a source –> Index the documents and save to Vector Search –> User submits queries against an LLM –> LLM retrieves relevant documents –> LLM generates a response -> Evaluate model –> Deploy it using Model Serving"},
+      {"id": 2, "text": "Ingest documents from a source –> Index the documents and save to Vector Search –> Evaluate model –> Deploy it using Model Serving"},
+      {"id": 3, "text": "User submits queries against an LLM –> Ingest documents from a source –> Index the documents and save to Vector Search –> LLM retrieves relevant documents –> LLM generates a response –> Evaluate model –> Deploy it using Model Serving"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q3",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer just deployed an LLM application at a digital marketing company that assists with answering customer service inquiries. Which metric should they monitor for their customer service LLM application in production?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Number of customer inquiries processed per unit of time"},
+      {"id": 1, "text": "Energy usage per query"},
+      {"id": 2, "text": "Final perplexity scores for the training of the model"},
+      {"id": 3, "text": "HuggingFace Leaderboard values for the base LLM"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q4",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is building a Generative AI system that suggests the best matched employee team member to newly scoped projects. The team member is selected from a very large team. The match should be based upon project date availability and how well their employee profile matches the project scope. Both the employee profile and project scope are unstructured text.\n\nHow should the Generative Al Engineer architect their system?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Create a tool for finding available team members given project dates. Embed all project scopes into a vector store, perform a retrieval using team member profiles to find the best team member."},
+      {"id": 1, "text": "Create a tool for finding team member availability given project dates, and another tool that uses an LLM to extract keywords from project scopes. Iterate through available team members' profiles and perform keyword matching to find the best available team member."},
+      {"id": 2, "text": "Create a tool to find available team members given project dates. Create a second tool that can calculate a similarity score for a combination of team member profile and the project scope. Iterate through the team members and rank by best score to select a team member."},
+      {"id": 3, "text": "Create a tool for finding available team members given project dates. Embed team profiles into a vector store and use the project scope and filtering to perform retrieval to find the available best matched team members."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q5",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is designing an LLM-powered live sports commentary platform. The platform provides real-time updates and LLM-generated analyses for any users who would like to have live summaries, rather than reading a series of potentially outdated news articles.\n\nWhich tool below will give the platform access to real-time data for generating game analyses based on the latest game scores?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "DatabricksIQ"},
+      {"id": 1, "text": "Foundation Model APIs"},
+      {"id": 2, "text": "Feature Serving"},
+      {"id": 3, "text": "AutoML"}
+    ],
+    "ans_id": 2,
+    "explanation": "Feature Serving is a function that provides features that a machine learning model can use in real time. This allows real-time sports data (e.g. scores, statistics) to be fed into the model, making it ideal for generating analytics based on this data."
+  },
+  {
+    "question_id": "examtopics_q6",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer has a provisioned throughput model serving endpoint as part of a RAG application and would like to monitor the serving endpoint's incoming requests and outgoing responses. The current approach is to include a micro-service in between the endpoint and the user interface to write logs to a remote server.\n\nWhich Databricks feature should they use instead which will perform the same task?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Vector Search"},
+      {"id": 1, "text": "Lakeview"},
+      {"id": 2, "text": "DBSQL"},
+      {"id": 3, "text": "Inference Tables"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q7",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer is tasked with improving the RAG quality by addressing its inflammatory outputs.\n\nWhich action would be most effective in mitigating the problem of offensive text outputs?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Increase the frequency of upstream data updates"},
+      {"id": 1, "text": "Inform the user of the expected RAG behavior"},
+      {"id": 2, "text": "Restrict access to the data sources to a limited number of users"},
+      {"id": 3, "text": "Curate upstream data properly that includes manual review before it is fed into the RAG system"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q8",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer is creating an LLM-based application. The documents for its retriever have been chunked to a maximum of 512 tokens each. The Generative Al Engineer knows that cost and latency are more important than quality for this application. They have several context length levels to choose from.\n\nWhich will fulfill their need?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "context length 514; smallest model is 0.44GB and embedding dimension 768"},
+      {"id": 1, "text": "context length 2048: smallest model is 11GB and embedding dimension 2560"},
+      {"id": 2, "text": "context length 32768: smallest model is 14GB and embedding dimension 4096"},
+      {"id": 3, "text": "context length 512: smallest model is 0.13GB and embedding dimension 384"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q9",
+    "content": [
+      {
+        "type": "text",
+        "value": "A small and cost-conscious startup in the cancer research field wants to build a RAG application using Foundation Model APIs.\n\nWhich strategy would allow the startup to build a good-quality RAG application while being cost-conscious and able to cater to customer needs?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Limit the number of relevant documents available for the RAG application to retrieve from"},
+      {"id": 1, "text": "Pick a smaller LLM that is domain-specific"},
+      {"id": 2, "text": "Limit the number of queries a customer can send per day"},
+      {"id": 3, "text": "Use the largest LLM possible because that gives the best performance for any general queries"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id":"examtopics_q10",
+    "question": "A Generative Al Engineer is responsible for developing a chatbot to enable their company's internal HelpDesk Call Center team to more quickly find related tickets and provide resolution. While creating the GenAI application work breakdown tasks for this project, they realize they need to start planning which data sources (either Unity Catalog volume or Delta table) they could choose for this application. They have collected several candidate data sources for consideration: \n\ncall_rep_history: a Delta table with primary keys representative_id, call_id. This table is maintained to calculate representatives' call resolution from fields call_duration and call start_time.\n\ntranscript Volume: a Unity Catalog Volume of all recordings as a *.wav files, but also a text transcript as *.txt files. \n\ncall_cust_history: a Delta table with primary keys customer_id, call_id. This table is maintained to calculate how much internal customers use the HelpDesk to make sure that the charge back model is consistent with actual service use.\n\ncall_detail: a Delta table that includes a snapshot of all call details updated hourly. It includes root_cause and resolution fields, but those fields may be empty for calls that are still active.\n\nmaintenance_schedule: a Delta table that includes a listing of both HelpDesk application outages as well as planned upcoming maintenance downtimes.\n\nThey need sources that could add context to best identify ticket root cause and resolution. Which TWO sources do that? (Choose two.)",
+    "type":"MS",
+    "choices": [
+      {"id": 0, "text": "call_cust_history"},
+      {"id": 1, "text": "maintenance_schedule"},
+      {"id": 2, "text": "call_rep_history"},
+      {"id": 3, "text": "call_detail"},
+      {"id": 4, "text": "transcript Volume"}
+    ],
+    "ans_ids":[3,4],
+    "explanation":""
+  }
+]

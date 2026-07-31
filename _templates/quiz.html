@@ -105,7 +105,7 @@
             {% endfor %}
         {% else %}
             <!-- fallback for old questions -->
-            {{ question.question }}
+            {{ question.question  | replace('\n', '<br>') | safe }}
         {% endif %}
     </div>
 
@@ -115,9 +115,22 @@
             <p class="result correct">✅ Correct</p>
         {% else %}
             <p class="result incorrect">❌ Incorrect</p>
+
+            <p>
+                <strong>Correct answer{% if question.type == 'MS' %}s{% endif %}:</strong>
+            </p>
+
+            <ul>
+            {% for answer in correct_answers %}
+                <li><strong>{{ answer.label }}.</strong> {{ answer.text }}</li>
+            {% endfor %}
+            </ul>
+
+            {% if question.explanation %}
             <div class="explanation">
                 {{ question.explanation }}
             </div>
+            {% endif %}
         {% endif %}
     {% endif %}
 

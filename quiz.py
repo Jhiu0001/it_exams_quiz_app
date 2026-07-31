@@ -8,28 +8,33 @@ app = Flask(__name__, template_folder="_templates")
 app.secret_key = "your-secret-key"
 
 # ----------------------------------------------------
-# Load questions from test bank (ONCE)
+# Load questions from test bank
 # ----------------------------------------------------
 
-# Absolute path to the folder where this project lives
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TEST_BANK_DIR = os.path.join(BASE_DIR, "test_bank")
 
-BANK_DIR = os.path.join(BASE_DIR, "user_testing") #Switch as necessary
-#BANK_DIR = os.path.join(BASE_DIR, "test_bank") #Switch as necessary
+def load_questions(exam_name):
 
-all_questions = []
+    exam_dir = os.path.join(TEST_BANK_DIR, exam_name)
 
-for filename in sorted(os.listdir(BANK_DIR)):
-    if filename.endswith(".json"):
-        with open(os.path.join(BANK_DIR, filename), "r", encoding="utf-8") as f:
-            all_questions.extend(json.load(f))
+    all_questions = []
 
-# Ensure unique question_id
-ids = [q["question_id"] for q in all_questions]
-if len(ids) != len(set(ids)):
-    raise ValueError("Duplicate question_id detected across test banks")
+    for filename in sorted(os.listdir(exam_dir)):
+        if filename.endswith(".json"):
+            with open(os.path.join(exam_dir, filename), "r", encoding="utf-8") as f:
+                all_questions.extend(json.load(f))
 
-question_lookup = {q["question_id"]: q for q in all_questions}
+    ids = [q["question_id"] for q in all_questions]
+    if len(ids) != len(set(ids)):
+        raise ValueError("Duplicate question_id detected")
+
+    question_lookup = {
+        q["question_id"]: q
+        for q in all_questions
+    }
+
+    return all_questions, question_lookup
 
 # ----------------------------------------------------
 # START PAGE: Configure quiz
@@ -48,6 +53,8 @@ def start_quiz():
         requested = max(1, requested)
 
         randomize = "randomize" in request.form
+        exam_name = request.form["exam_name"]
+        all_questions, question_lookup = load_questions(exam_name)
 
         total_available = len(all_questions)
         effective_count = min(requested, total_available)
@@ -61,6 +68,7 @@ def start_quiz():
         # ----- Initialize session -----
         session.clear()
         session.update({
+            "exam_name": exam_name,
             "quiz_question_ids": [q["question_id"] for q in selected_questions],
             "question_index": 0,
             "score": 0,
@@ -70,7 +78,16 @@ def start_quiz():
 
         return redirect(url_for("quiz"))
 
-    return render_template("quiz_start.html")
+    exams = sorted([
+        folder
+        for folder in os.listdir(TEST_BANK_DIR)
+        if os.path.isdir(os.path.join(TEST_BANK_DIR, folder))
+    ])
+
+    return render_template(
+        "quiz_start.html",
+        exams=exams
+    )
 
 
 # ----------------------------------------------------
@@ -82,6 +99,9 @@ def quiz():
 
     if "quiz_question_ids" not in session:
         return redirect(url_for("start_quiz"))
+
+    exam_name = session["exam_name"]
+    all_questions, question_lookup = load_questions(exam_name)
 
     question_ids = session["quiz_question_ids"]
     questions = [question_lookup[qid] for qid in question_ids]
@@ -136,14 +156,33 @@ def quiz():
             else:
                 session["is_correct"] = False
 
+    correct_answers = []
+
+    if question["type"] == "MC":
+        for label, choice in labeled_choices.items():
+            if choice["id"] == question["ans_id"]:
+                correct_answers.append({
+                    "label": label,
+                    "text": choice["text"]
+                })
+
+    elif question["type"] == "MS":
+        for label, choice in labeled_choices.items():
+            if choice["id"] in question["ans_ids"]:
+                correct_answers.append({
+                    "label": label,
+                    "text": choice["text"]
+                })
+
     return render_template(
-        "quiz.html",
-        question=question,
-        labeled_choices=labeled_choices,
-        answered=session["answered"],
-        is_correct=session["is_correct"],
-        current_number=q_index + 1,
-        total_questions=len(questions)
+    "quiz.html",
+    question=question,
+    labeled_choices=labeled_choices,
+    answered=session["answered"],
+    is_correct=session["is_correct"],
+    current_number=q_index + 1,
+    total_questions=len(questions),
+    correct_answers=correct_answers
     )
 
 @app.route("/reset")
@@ -151,17 +190,7 @@ def reset():
     session.clear()
     return redirect(url_for("quiz"))
 
-@app.route("/reload")
-def reload_questions():
-    global all_questions, question_lookup
 
-    all_questions = []
-    for filename in sorted(os.listdir(BANK_DIR)):
-        if filename.endswith(".json"):
-            with open(os.path.join(BANK_DIR, filename), "r", encoding="utf-8") as f:
-                all_questions.extend(json.load(f))
-
-    question_lookup = {q["question_id"]: q for q in all_questions}
 
 @app.route("/exit")
 def exit_quiz():
