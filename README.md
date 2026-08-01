@@ -1,68 +1,128 @@
-# Databricks Machine Learning Professional Quiz App
-# DBML_PRO_Quiz.v0.1.7 - James Hiu - May.05.2026
+# IT Exams Quiz App
 
-A Flask-based quiz application designed to deliver structured, repeatable quizzes from JSON-based test banks.  
-The app supports both multiple-choice and multi-select questions, deterministic answer shuffling, and configurable quiz lengths.
+### v0.2.0 – James Hiu – Aug.01.2026
+
+A Flask-based quiz application designed to deliver structured, repeatable certification exams from JSON-based question banks.
+
+The application supports multiple certification exams, configurable quiz lengths, deterministic answer randomization, and both Multiple Choice (MC) and Multi-Select (MS) question types. New certification exams can be added without modifying the application code by simply creating a new folder within the `test_bank` directory.
 
 ---
 
-## Latest Updates v0.1.7
+## Latest Updates (v0.2.0)
 
-- Updated test_bank questions, 2026 questions (Moved older test resources to archive)
-- Updated quiz.html to better display code blocks in questions
-- Updated quiz_end.html to include an 'exit' button
-- Updated test_question_template.json to handle questions having style: 'text, code block, text' 
-- Updated quiz.py to handle updated code that formats questions better.
+* Renamed project to support multiple IT certification exams.
+* Added support for multiple exam banks through automatic folder discovery.
+* Added exam selection drop-down on the quiz configuration page.
+* Updated `quiz.py` to dynamically load questions from the selected exam.
+* Improved question formatting to better support lengthy certification questions.
+* Added display of the correct answer(s) after an incorrect response.
+* Removed legacy question loading architecture in favor of per-exam loading.
+* Simplified project maintenance by organizing each certification into its own folder.
 
 ---
 
 ## Features
 
-- Flask web application
-- JSON-driven question banks
-- Multiple Choice (MC) and Multi-Select (MS) support
-- Deterministic answer randomization per question
-- Sequential or randomized question order
-- Session-based scoring and progress tracking
-- Clean, minimal UI with explanations for incorrect answers
-- Modular test bank structure for easy expansion
+* Flask web application
+* Multiple certification exam support
+* Automatic discovery of available exams
+* JSON-driven question banks
+* Multiple Choice (MC) support
+* Multi-Select (MS) support
+* Deterministic answer randomization per question
+* Sequential or randomized question order
+* Configurable quiz length
+* Session-based scoring and progress tracking
+* Displays correct answer(s) after incorrect responses
+* Explanation support for each question
+* Clean, lightweight interface
+* Modular architecture for easy expansion
 
 ---
 
 ## Project Structure
-db_ml_pro_quiz_app/
-├─ quiz.py # Flask application logic
-├─ _templates/
-│ ├─ quiz.html # Main quiz interface
-│ ├─ quiz_start.html # Quiz configuration page
-│ ├─ quiz_end.html # Final score summary
-│ └─ test_question_template.json #a template for users to copy,paste and add new questions
-├─ archive/
-│ ├─ old_exams.json # outdated questions are placed here.
-├─ test_bank/ # JSON test banks
-│ ├─ Q1-Q10.json # questions are sourced from paid mock exams provider sites
-│ ├─ Q11-Q20.json # I try to keep it to 10 questions per file for readability
-├─ user_testing/
-│ ├─ Q21-Q30.json # New questions go into this folder then corresponding directory lines are commented/uncommented in the quiz.py
-│ ├─ Q31-Q40.json # I would be editing for typos, and visual presentation (UI/UX) of new questions before moving files from Testing to test_bank.
+
+```text
+IT_EXAMS_QUIZ_APP/
+│
+├── quiz.py
+├── _templates/
+│   ├── quiz_start.html
+│   ├── quiz.html
+│   ├── quiz_end.html
+│   └── test_question_template.json
+│
+├── test_bank/
+│   ├── Databricks_GenAI_Engineer_Associate/
+│   │   ├── Q001-Q010.json
+│   │   ├── Q011-Q020.json
+│   │   └── ...
+│   │
+│   ├── <Exam #2>/
+│   │   ├── ...
+|
+│
+├── archive/
+│
+├── user_testing/
+│
+├── README.md
+└── .gitignore
+```
 
 ---
 
 ## How It Works
 
-1. Questions are loaded from one or more JSON files at startup
-2. Users configure quiz length and randomization options
-3. Questions are served sequentially during the session
-4. Answer choices are shuffled deterministically using question IDs
-5. Scores and progress are tracked using Flask sessions
-6. Explanations are shown for incorrect answers
+1. On startup, the application scans the `test_bank` directory for available certification exams.
+2. The user selects which certification exam to take.
+3. Questions are loaded only from the selected exam folder.
+4. The user configures:
 
-## User Notes
-- while editing json files (e.g test bank), Alt + Z, enables word wrap.
+   * Number of questions
+   * Sequential or randomized question order
+5. Answer choices are shuffled deterministically using each question's unique `question_id`.
+6. Quiz progress and scoring are maintained using Flask sessions.
+7. After an incorrect response, the application displays the correct answer(s) along with any explanation provided.
 
 ---
 
-### Prerequisites
-- Python 3.9+
-- Flask
+## Adding a New Certification Exam
+
+Adding support for a new certification requires no code changes.
+
+Simply create a new folder inside `test_bank`:
+
+```text
+test_bank/
+    My_New_Certification/
+        Q001-Q010.json
+        Q011-Q020.json
+```
+
+The application will automatically detect the new certification and include it in the exam selection drop-down.
+
+---
+
+## Question Bank Notes
+
+* Questions are stored as JSON files.
+* Multiple JSON files may exist within a certification folder.
+* Questions are merged automatically when an exam begins.
+* `question_id` values must be unique within an exam.
+
+---
+
+## User Notes
+
+* While editing JSON files in VS Code, press **Alt + Z** to enable Word Wrap.
+* Keeping approximately 10 questions per JSON file makes reviewing and maintaining content much easier.
+* Store works-in-progress inside `user_testing` before promoting them into `test_bank`.
+
+---
+
+## Prerequisites
+
+* Python 3.9+
+* Flask
 
