@@ -1,0 +1,191 @@
+[
+  {
+    "question_id": "examtopics_q21",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer has been asked to design an LLM-based application that accomplishes the following business objective: answer employee HR questions using HR PDF documentation.\n\nWhich set of high level tasks should the Generative AI Engineer's system perform?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Calculate averaged embeddings for each HR document, compare embeddings to user query to find the best document. Pass the best document with the user query into an LLM with a large context window to generate a response to the employee"},
+      {"id": 1, "text": "Use an LLM to summarize HR documentation. Provide summaries of documentation and user query into an LLM with a large context window to generate a response to the user."},
+      {"id": 2, "text": "Create an interaction matrix of historical employee questions and HR documentation. Use ALS to factorize the matrix and create embeddings. Calculate the embeddings of new queries and use them to find the best HR documentation. Use an LLM to generate a response to the employee question based upon the documentation retrieved."},
+      {"id": 3, "text": "Split HR documentation into chunks and embed into a vector store. Use the employee question to retrieve best matched chunks of documentation, and use the LLM to generate a response to the employee based upon the documentation retrieved."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q22",
+    "content": [
+      {
+        "type": "text",
+        "value": "Generative AI Engineer at an electronics company just deployed a RAG application for customers to ask questions about products that the company carries. However, they received feedback that the RAG response often returns information about an irrelevant product.\n\nWhat can the engineer do to improve the relevance of the RAG's response?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Assess the quality of the retrieved context"},
+      {"id": 1, "text": "Implement caching for frequently asked questions"},
+      {"id": 2, "text": "Use a different LLM to improve the generated response"},
+      {"id": 3, "text": "Use a different semantic similarity search algorithm"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q23",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is developing a chatbot designed to assist users with insurance-related queries. The chatbot is built on a large language model (LLM) and is conversational. However, to maintain the chatbot's focus and to comply with company policy, it must not provide responses to questions about politics. Instead, when presented with political inquiries, the chatbot should respond with a standard message:\n\n'Sorry, I cannot answer that. I am a chatbot that can only answer questions around insurance.'\n\nWhich framework type should be implemented to solve this?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Safety Guardrail"},
+      {"id": 1, "text": "Security Guardrail"},
+      {"id": 2, "text": "Contextual Guardrail"},
+      {"id": 3, "text": "Compliance Guardrail"}
+
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q24",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is using the code below to test setting up a vector store:"
+      },
+      {
+        "type": "code",
+        "value": "from databricks.vector_search.client import VectorSearchClient\n\nvsc = VectorSearchClient()\n\nvsc.create_endpoint(name='vector_search_test',endpoint_type='STANDARD')"
+      },
+      {
+        "type": "text",
+        "value": "Assuming they intend to use Databricks managed embeddings with the default embedding model, what should be the next logical function call?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "vsc.get_index()"},
+      {"id": 1, "text": "vsc.create_delta_sync_index()"},
+      {"id": 2, "text": "vsc.create_direct_access_index()"},
+      {"id": 3, "text": "vsc.similarity_search()"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q25",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is tasked with deploying an application that takes advantage of a custom MLflow Pyfunc model to return some interim results.\n\nHow should they configure the endpoint to pass the secrets and credentials?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use spark.conf.set()"},
+      {"id": 1, "text": "Pass variables using the Databricks Feature Store API"},
+      {"id": 2, "text": "Add credentials using environment variables"},
+      {"id": 3, "text": "Pass the secrets in plain text"}
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q26",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer wants to build an LLM-based solution to help a restaurant improve its online customer experience with bookings by automatically handling common customer inquiries. The goal of the solution is to minimize escalations to human intervention and phone calls while maintaining a personalized interaction. To design the solution, the Generative AI Engineer needs to define the input data to the LLM and the task it should perform.\n\nWhich input/output pair will support their goal?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Input: Online chat logs; Output: Group the chat logs by users, followed by summarizing each user's interactions"},
+      {"id": 1, "text": "Input: Online chat logs; Output: Buttons that represent choices for booking details"},
+      {"id": 2, "text": "Input: Customer reviews; Output: Classify review sentiment"},
+      {"id": 3, "text": "Input: Online chat logs; Output: Cancellation options"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q27",
+    "content": [
+      {
+        "type": "text",
+        "value": "What is an effective method to preprocess prompts using custom code before sending them to an LLM?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Directly modify the LLM's internal architecture to include preprocessing steps"},
+      {"id": 1, "text": "It is better not to introduce custom code to preprocess prompts as the LLM has not been trained with examples of the preprocessed prompts"},
+      {"id": 2, "text": "Rather than preprocessing prompts, it's more effective to postprocess the LLM outputs to align the outputs to desired outcomes"},
+      {"id": 3, "text": "Write a MLflow PyFunc model that has a separate function to process the prompts"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q28",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is developing an LLM application that users can use to generate personalized birthday poems based on their names.\n\nWhich technique would be most effective in safeguarding the application, given the potential for malicious user inputs?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Implement a safety filter that detects any harmful inputs and ask the LLM to respond that it is unable to assist"},
+      {"id": 1, "text": "Reduce the time that the users can interact with the LLM"},
+      {"id": 2, "text": "Ask the LLM to remind the user that the input is malicious but continue the conversation with the user"},
+      {"id": 3, "text": "Increase the amount of compute that powers the LLM to process input faster"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q29",
+    "content": [
+      {
+        "type": "text",
+        "value": "Which indicator should be considered to evaluate the safety of the LLM outputs when qualitatively assessing LLM responses for a translation use case?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "The ability to generate responses in code"},
+      {"id": 1, "text": "The similarity to the previous language"},
+      {"id": 2, "text": "The latency of the response and the length of text generated"},
+      {"id": 3, "text": "The accuracy and relevance of the responses"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q30",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is developing a patient-facing healthcare-focused chatbot. If the patient's question is not a medical emergency, the chatbot should solicit more information from the patient to pass to the doctor's office and suggest a few relevant pre-approved medical articles for reading. If the patient's question is urgent, direct the patient to calling their local emergency services.\n\nGiven the following user input:'I have been experiencing severe headaches and dizziness for the past two days.'\n\nWhich response is most appropriate for the chatbot to generate?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Here are a few relevant articles for your browsing. Let me know if you have questions after reading them."},
+      {"id": 1, "text": "Please call your local emergency services."},
+      {"id": 2, "text": "Headaches can be tough. Hope you feel better soon!"},
+      {"id": 3, "text": "Please provide your age, recent activities, and any other symptoms you have noticed along with your headaches and dizziness."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  }
+]

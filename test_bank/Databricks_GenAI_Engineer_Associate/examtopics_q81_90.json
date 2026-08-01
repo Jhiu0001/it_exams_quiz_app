@@ -1,0 +1,199 @@
+[
+  {
+    "question_id": "examtopics_q81",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is using LangChain to assist a museum in classifying documents and using this code:"
+      },
+      {
+        "type": "code",
+        "value": "from langchain. import PromptTemplate\n\ntemplate_text='''You are an automated archeological assistant helping identify documents relevant to ancient Egypt. If the document is relevant return 'relevant', else return 'irrelevant' with no additional text.\nDocument:' {document_input}'\nResponse:\n'''\n\nprompt_template = PromptTemplate(input_variables=['document_input'])\n\ncompleted_prompt = prompt_template.format(document_input=document_input)"
+      },
+      {
+        "type": "text",
+        "value": "Their code results in an error.\nWhat do they need to change in order to fix this template?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Provide an LLM argument to PromptTemplate()"},
+      {"id": 1, "text": "Provide template and LLM arguments to PromptTemplate()"},
+      {"id": 2, "text": "Omit PromptTemplate(), it is only used for multi-part templates"},
+      {"id": 3, "text": "Provide a template argument to PromptTemplate()"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q82",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer has been reviewing issues with their company's LLM based question-answering assistant and has determined that a technique called prompt chaining could help alleviate some performance concerns. However, to suggest this to their team, they have to clearly explain how it works and how it can benefit their question-answering assistant.\n\nWhich explanation do they communicate to the team?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "It allows you to break down complex tasks into multiple independent subtasks. This enables the assistant to generate more comprehensive and accurate responses."},
+      {"id": 1, "text": "It allows you to reduce the latency of your applications. By having multiple chains participating in the response as a chain, you increase the rate at which the response is generated."},
+      {"id": 2, "text": "It allows you to decrease the effort involved in crafting a prompt. Chains make it possible to reuse prompt text across multiple different use cases."},
+      {"id": 3, "text": "It reduces the average cost of a typical request. Chains make more efficient use of the tokens produced to generate higher quality responses with fewer tokens."}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q83",
+    "content": [
+      {
+        "type": "text",
+        "value": "An AI developer team wants to fine tune an open-weight model to have exceptional performance on a code generation use case. They are trying to choose the best model to start with. They want to minimize model hosting costs, and are using Huggingface model cards and spaces to explore models.\n\nWhich TWO model attributes and metrics should the team focus on to make their selection? (Choose two.)"
+      }
+    ],
+    "type": "MS",
+    "choices": [
+      {"id": 0, "text": "Big Code Models Leaderboard"},
+      {"id": 1, "text": "Number of model parameters"},
+      {"id": 2, "text": "MTEB Leaderboard"},
+      {"id": 3, "text": "Chatbot Arena Leaderboard"},
+      {"id": 4, "text": "Number of model downloads last month"}
+    ],
+    "ans_ids": [0,1],
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q84",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer at an automotive company would like to build a question-answering chatbot to help customers answer specific questions about their vehicles. They have:\n• A catalog with hundreds of thousands of cars manufactured since the 1960s\n• Historical searches, with user queries and successful matches\n• Descriptions of their own cars in multiple languages\n\nThey have already selected an open source LLM and created a test set of user queries. They need to discard techniques that will not help them build the chatbot.\n\nWhich do they discard?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Setting chunk size to match the model's context window to maximize coverage"},
+      {"id": 1, "text": "Implementing metadata filtering based on car models and years"},
+      {"id": 2, "text": "Fine-tuning an embedding model on automotive terminology"},
+      {"id": 3, "text": "Adding few-shot examples for response generation"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q85",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer at a legal firm is designing a RAG system to analyze historical legal case precedents. The system needs to process millions of court opinions and legal documents, already organized by time and topic, to track how interpretations of specific laws have evolved over time. All of these documents are in plain-text. The engineer needs to choose a chunking method that would most effectively preserve continuity and the temporal nature of the cases.\n\nWhich method do they choose?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Implement windowed summarization with overlapping chunks."},
+      {"id": 1, "text": "Implement a hierarchical tree structure, like RAPTOR, to group similar legal concepts."},
+      {"id": 2, "text": "Implement paragraph level embeddings with each chunk."},
+      {"id": 3, "text": "Implement sentence level embeddings with each chunk tagged with the time to enable metadata filtering."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q86",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is developing an agent system using a popular agent-authoring library. The agent comprises multiple parallel and sequential chains. The engineer encounters challenges as the agent fails at one of the steps, making it difficult to debug the root cause. They need to find an appropriate approach to research this issue and discover the cause of failure.\n\nWhich approach do they choose?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Enable MLflow tracing to gain visibility into each agent's behavior and execution step."},
+      {"id": 1, "text": "Run MLflow.evaluate to determine root cause of failed step."},
+      {"id": 2, "text": "Implement structured logging within the agent's code to capture detailed execution information."},
+      {"id": 3, "text": "Deconstruct the agent into independent steps to simplify debugging."}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q87",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is experimenting with using parameters to configure an agent in Mosaic Agent Framework. However, they are struggling to get the agent to respond with relevant information with this configuration:"
+      },
+      {
+        "type": "code",
+        "value": "config_dict = {\n    \"prompt_template\": \"You are a trivia bot. Generate a trivia question based on the user's input.\",\n    \"prompt_template_input_vars\": [\"user_input\"],\n    \"model_serving_endpoint\": \"databricks-dbrx-instruct\",\n    \"llm_parameters\": {\n        \"temperature\": 0.01,\n        \"max_tokens\": 500\n    }\n}"
+      },
+      {
+        "type": "text",
+        "value": "Which error is causing the problem?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "The prompt does not parse the user's input vars"},
+      {"id": 1, "text": "The prompt does not set the retriever schema"},
+      {"id": 2, "text": "The prompt does not list available agents for the LLM to call"},
+      {"id": 3, "text": "The prompt is not wrapped in ChatModel"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q88",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is using LangGraph to define multiple tools in a single agentic application. They want to enable the main orchestrator LLM to decide on its own which tools are most appropriate to call for a given prompt. To do this, they must determine the general flow of the code.\n\nWhich sequence will do this?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "1. Define or import the tools 2. Add tools and LLM to the agent 3. Create the ReAct agent"},
+      {"id": 1, "text": "1. Define or import the tools 2. Define the agent 3. Initialize the agent with ReAct, the LLM, and the tools"},
+      {"id": 2, "text": "1. Define the tools 2. Load each tool into a separate agent 3. Instruct the LLM to use ReAct to call the appropriate agent"},
+      {"id": 3, "text": "1. Define the tools inside the agents 2. Load the agents into the LLM 3. Instruct the LLM to use CoT reasoning to determine the appropriate agent"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q89",
+    "content": [
+      {
+        "type": "text",
+        "value": "All of the following are python APIs used to query Databricks foundation models. When running in an interactive notebook, which of the following libraries does not automatically use the current session credentials?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "OpenAI client"},
+      {"id": 1, "text": "REST API via requests library"},
+      {"id": 2, "text": "MLflow Deployments SDK"},
+      {"id": 3, "text": "Databricks Python SDK"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q90",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is deploying a customer-facing, fine-tuned LLM on their public website. Given the large investment the company put into fine tuning this model, and the proprietary nature of the tuning data, they are concerned about model inversion attacks.\n\nWhich of the following Databricks AI Security Framework (DASF) risk mitigation strategies are most relevant to this use case?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Implement AI guardrails to allow users to configure and enforce compliance"},
+      {"id": 1, "text": "Leverage Databricks access control lists (ACLs) to configure permissions for accessing models"},
+      {"id": 2, "text": "Use secure model features with Databricks Feature Store"},
+      {"id": 3, "text": "Apply attribute-based access controls (ABAC) to limit unauthorized access"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  }
+]

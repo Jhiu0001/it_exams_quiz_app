@@ -1,0 +1,192 @@
+[
+  {
+    "question_id": "examtopics_q41",
+    "content": [
+      {
+        "type": "text",
+        "value": "A company has a typical RAG-enabled, customer-facing chatbot on its website."
+      },
+      {
+        "type": "mermaid",
+        "value": "flowchart LR\nU[User Questions] --> A[1]\nA --> B[2]\nA --> C[3]\nB --> C\nC --> D[4]\nD --> O[Output]"
+      },
+      {
+        "type": "text",
+        "value": "Select the correct sequence of components a user's questions will go through before the final output is returned. Use the diagram above for reference."
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "1.embedding model, 2.vector search, 3.context-augmented prompt, 4.response-generating LLM"},
+      {"id": 1, "text": "1.context-augmented prompt, 2.vector search, 3.embedding model, 4.response-generating LLM"},
+      {"id": 2, "text": "1.response-generating LLM, 2.vector search, 3.context-augmented prompt, 4.embedding model"},
+      {"id": 3, "text": "Reduce the number of records retrieved from the vector database"},
+      {"id": 4, "text": " 1.response-generating LLM, 2.context-augmented prompt, 3.vector search, 4.embedding model"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q42",
+    "content": [
+      {
+        "type": "text",
+        "value": "A team wants to serve a code generation model as an assistant for their software developers. It should support multiple programming languages.\n\nQuality is the primary objective.\n\nWhich of the Databricks Foundation Model APIs, or models available in the Marketplace, would be the best fit?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Llama2-70b"},
+      {"id": 1, "text": "BGE-large"},
+      {"id": 2, "text": "MPT-7b"},
+      {"id": 3, "text": "CodeLlama-34B"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q43",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is building a RAG application that will rely on context retrieved from source documents that are currently in PDF format. These PDFs can contain both text and images. They want to develop a solution using the least amount of lines of code.\n\nWhich Python package should be used to extract the text from the source documents?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "flask"},
+      {"id": 1, "text": "beautifulsoup"},
+      {"id": 2, "text": "unstructured"},
+      {"id": 3, "text": "numpy"}
+
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q44",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer received the following business requirements for an external chatbot.\n\nThe chatbot needs to know what types of questions the user asks and routes to appropriate models to answer the questions. For example, the user might ask about upcoming event details. Another user might ask about purchasing tickets for a particular event.\n\nWhat is an ideal workflow for such a chatbot?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "The chatbot should only look at previous event information"},
+      {"id": 1, "text": "There should be two different chatbots handling different types of user queries."},
+      {"id": 2, "text": "The chatbot should be implemented as a multi-step LLM workflow. First, identify the type of question asked, then route the question to the appropriate model. If it's an upcoming event question, send the query to a text-to-SQL model. If it's about ticket purchasing, the customer should be redirected to a payment platform."},
+      {"id": 3, "text": "The chatbot should only process payments"}
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q45",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer is tasked with developing an application that is based on an open source large language model (LLM). They need a foundation LLM with a large context window.\n\nWhich model fits this need?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "DistilBERT"},
+      {"id": 1, "text": "MPT-30B"},
+      {"id": 2, "text": "Llama2-70B"},
+      {"id": 3, "text": "DBRX"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q46",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is building an LLM-based application that has an important transcription (speech-to-text) task. Speed is essential for the success of the application.\n\nWhich open Generative AI models should be used?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "DBRX"},
+      {"id": 1, "text": "MPT-30B-Instruct"},
+      {"id": 2, "text": "Llama-2-70b-chat-hf"},
+      {"id": 3, "text": "whisper-large-v3 (1.6B)"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q47",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer has a provisioned throughput model serving endpoint as part of a RAG application and would like to monitor the serving endpoint’s incoming requests and outgoing responses.\n\nWhich Databricks feature should they use?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "AutoML"},
+      {"id": 1, "text": "Vector Search"},
+      {"id": 2, "text": "Inference Tables"},
+      {"id": 3, "text": "Feature Serving"}
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q48",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is deciding between using LSH (Locality Sensitive Hashing) and HNSW (Hierarchical Navigable Small World) for indexing their vector database. Their top priority is semantic accuracy.\n\nWhich approach should the Generative AI Engineer use to evaluate these two techniques?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Compare the cosine similarities of the embeddings of returned results against those of a representative sample of test inputs"},
+      {"id": 1, "text": "Compare the Bilingual Evaluation Understudy (BLEU) scores of returned results for a representative sample of test inputs"},
+      {"id": 2, "text": "Compare the Recall-Oriented-Understudy for Gisting Evaluation (ROUGE) scores of returned results for a representative sample of test inputs"},
+      {"id": 3, "text": "Compare the Levenshtein distances of returned results against a representative sample of test inputs"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q49",
+    "content": [
+      {
+        "type": "text",
+        "value": "When developing an LLM application, it's crucial to ensure that the data used for training the model complies with licensing requirements to avoid legal risks.\n\nWhich action is most appropriate to avoid legal risks?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Only use data explicitly labeled with an open license and ensure the license terms are followed."},
+      {"id": 1, "text": "Any LLM outputs are reasonable to use because they do not reveal the original sources of data directly."},
+      {"id": 2, "text": "Reach out to the data curators directly to gain written consent for using their data."},
+      {"id": 3, "text": "Use any publicly available data as public data does not have legal restrictions."}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q50",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer interfaces with an LLM with instruction-following capabilities trained on customer calls inquiring about product availability. The LLM should output 'Success' if the product is available or 'Fail' if not.\n\nWhich prompt allows the engineer to receive call classification labels correctly?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "You are a helpful assistant that reads customer call transcripts. Walk through the transcript and think step-by-step if the customer's inquiries are addressed successfully. Answer 'Success' if yes; otherwise, answer 'Fail'."},
+      {"id": 1, "text": "You will be given a customer call transcript where the customer asks about product availability. Classify the call as 'Success' if the product is available and 'Fail' if the product is unavailable."},
+      {"id": 2, "text": "You will be given a customer call transcript where the customer asks about product availability. The outputs are either 'Success' or 'Fail'. Format the output in JSON, for example: {'call_id': '123', 'label': 'Succes'}."},
+      {"id": 3, "text": "You will be given a customer call transcript. Answer 'Success' if the customer call has been resolved successfully. Answer 'Fail' if the call is redirected or if the question is not resolved."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  }
+]

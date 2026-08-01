@@ -1,0 +1,192 @@
+[
+  {
+    "question_id": "examtopics_q31",
+    "content": [
+      {
+        "type": "text",
+        "value": "After changing the response generating LLM in a RAG pipeline from GPT-4 to a model with a shorter context length that the company self-hosts, the Generative AI Engineer is getting the following error:"
+      },
+      {
+        "type": "code",
+        "value": "{'error_code': 'BAD_REQUEST', 'message': 'Bad request: rpc error: code = InvalidArgument desc = prompt token count (4595) cannot exceed 4096...'}"
+      },
+      {
+        "type": "text",
+        "value": "What TWO solutions should the Generative AI Engineer implement without changing the response generating model? (Choose two.)"
+      }
+    ],
+    "type": "MS",
+    "choices": [
+      {"id": 0, "text": "Use a smaller embedding model to generate embeddings"},
+      {"id": 1, "text": "Reduce the maximum output tokens of the new model"},
+      {"id": 2, "text": "Decrease the chunk size of embedded documents"},
+      {"id": 3, "text": "Reduce the number of records retrieved from the vector database"},
+      {"id": 4, "text": "Retrain the response generating model using ALiBi"}
+    ],
+    "ans_ids":[2,3],
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q32",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer is building a system which will answer questions on latest stock news articles.\n\nWhich will NOT help with ensuring the outputs are relevant to financial news?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Implement a comprehensive guardrail framework that includes policies for content filters tailored to the finance sector."},
+      {"id": 1, "text": "Increase the compute to improve processing speed of questions to allow greater relevancy analysis"},
+      {"id": 2, "text": "Implement a profanity filter to screen out offensive language."},
+      {"id": 3, "text": "Incorporate manual reviews to correct any problematic outputs prior to sending to the users"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q33",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer is building a RAG application that answers questions about internal documents for the company SnoPen AI. The source documents may contain a significant amount of irrelevant content, such as advertisements, sports news, or entertainment news, or content about other companies.\n\n Which approach is advisable when building a RAG application to achieve this goal of filtering irrelevant information?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Keep all articles because the RAG application needs to understand non-company content to avoid answering questions about them."},
+      {"id": 1, "text": "Include in the system prompt that any information it sees will be about SnoPenAI, even if no data filtering is performed."},
+      {"id": 2, "text": "Include in the system prompt that the application is not supposed to answer any questions unrelated to SnoPen AI."},
+      {"id": 3, "text": "Consolidate all SnoPen AI related documents into a single chunk in the vector database."}
+
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q34",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer has successfully ingested unstructured documents and chunked them by document sections. They would like to store the chunks in a Vector Search index. The current format of the dataframe has two columns: (i) original document file name (ii) an array of text chunks for each document.\n\nWhat is the most performant way to store this dataframe?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Split the data into train and test set, create a unique identifier for each document, then save to a Delta table"},
+      {"id": 1, "text": "Flatten the dataframe to one chunk per row, create a unique identifier for each row, and save to a Delta table"},
+      {"id": 2, "text": "First create a unique identifier for each document, then save to a Delta table"},
+      {"id": 3, "text": "Store each chunk as an independent JSON file in Unity Catalog Volume. For each JSON file, the key is the document section name and the value is the array of text chunks for that section"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q35",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer has created a RAG application which can help employees retrieve answers from an internal knowledge base, such as Confluence pages or Google Drive. The prototype application is now working with some positive feedback from internal company testers. Now the Generative Al Engineer wants to formally evaluate the system's performance and understand where to focus their efforts to further improve the system.\n\nHow should the Generative AI Engineer evaluate the system?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use cosine similarity score to comprehensively evaluate the quality of the final generated answers."},
+      {"id": 1, "text": "Curate a dataset that can test the retrieval and generation components of the system separately. Use MLflow's built in evaluation metrics to perform the evaluation on the retrieval and generation components."},
+      {"id": 2, "text": "Benchmark multiple LLMs with the same data and pick the best LLM for the job"},
+      {"id": 3, "text": "Use an LLM-as-a-judge to evaluate the quality of the final answers generated."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q36",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer has already trained an LLM on Databricks and it is now ready to be deployed.\n\nWhich of the following steps correctly outlines the easiest process for deploying a model on Databricks?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Log the model as a pickle object, upload the object to Unity Catalog Volume, register it to Unity Catalog using MLflow, and start a serving endpoint"},
+      {"id": 1, "text": "Log the model using MLflow during training, directly register the model to Unity Catalog using the MLflow API, and start a serving endpoint"},
+      {"id": 2, "text": "Save the model along with its dependencies in a local directory, build the Docker image, and run the Docker container"},
+      {"id": 3, "text": "Wrap the LLM's prediction function into a Flask application and serve using Gunicorn"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q37",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer developed an LLM application using the provisioned throughput Foundation Model API. Now that the application is ready to be deployed, they realize their volume of requests are not sufficiently high enough to create their own provisioned throughput endpoint. They want to choose a strategy that ensures the best cost-effectiveness for their application.\n\nWhat strategy should the Generative AI Engineer use?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Switch to using External Models instead"},
+      {"id": 1, "text": "Deploy the model using pay-per-token throughput as it comes with cost guarantees"},
+      {"id": 2, "text": "Change to a model with a fewer number of parameters in order to reduce hardware constraint issues"},
+      {"id": 3, "text": "Throttle the incoming batch of requests manually to avoid rate limiting issues"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q38",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is building an LLM to generate article summaries in the form of a type of poem, such as a haiku, given the article content. However, the initial output from the LLM does not match the desired tone or style.\n\nWhich approach will NOT improve the LLM's response to achieve the desired response?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Provide the LLM with a prompt that explicitly instructs it to generate text in the desired tone and style"},
+      {"id": 1, "text": "Use a neutralizer to normalize the tone and style of the underlying documents"},
+      {"id": 2, "text": "Include few-shot examples in the prompt to the LLM"},
+      {"id": 3, "text": "Fine-tune the LLM on a dataset of desired tone and style"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q39",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is creating an LLM-powered application that will need access to up-to-date news articles and stock prices.The design requires the use of stock prices which are stored in Delta tables and finding the latest relevant news articles by searching the internet.\n\nHow should the Generative AI Engineer architect their LLM system?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use an LLM to summarize the latest news articles and lookup stock tickers from the summaries to find stock prices."},
+      {"id": 1, "text": "Query the Delta table for volatile stock prices and use an LLM to generate a search query to investigate potential causes of the stock volatility."},
+      {"id": 2, "text": "Download and store news articles and stock price information in a vector store. Use a RAG architecture to retrieve and generate at runtime."},
+      {"id": 3, "text": "Create an agent with tools for SQL querying of Delta tables and web searching, provide retrieved values to an LLM for generation of response."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q40",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is designing a chatbot for a gaming company that aims to engage users on its platform while its users play online video games.\n\nWhich metric would help them increase user engagement and retention for their platform?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Randomness"},
+      {"id": 1, "text": "Diversity of responses"},
+      {"id": 2, "text": "Lack of relevance"},
+      {"id": 3, "text": "Repetition of responses"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  }
+]

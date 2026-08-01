@@ -1,0 +1,182 @@
+[
+  {
+    "question_id": "examtopics_q71",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is building a RAG application that will rely on context retrieved from source documents that are currently in HTML format. They want to develop a solution using the least amount of lines of code.\n\nWhich Python package should be used to extract the text from the source documents?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "pytesseract"},
+      {"id": 1, "text": "numpy"},
+      {"id": 2, "text": "pypdf2"},
+      {"id": 3, "text": "beautifulsoup"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q72",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is building a RAG application for answering employee questions on company policies.\n\nWhat are the steps needed to build this RAG application and deploy it?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Ingest documents from a source -> Index the documents and saves to Vector Search -> User submits queries against an LLM -> LLM retrieves relevant documents -> Evaluate model -> LLM generates a response -> Deploy it using Model Serving"},
+      {"id": 1, "text": "User submits queries against an LLM -> Ingest documents from a source -> Index the documents and save to Vector Search -> LLM retrieves relevant documents -> LLM generates a response -> Evaluate model -> Deploy it using Model Serving"},
+      {"id": 2, "text": "Ingest documents from a source -> Index the documents and save to Vector Search -> Evaluate model -> Deploy it using Model Serving -> User submits queries against an LLM -> LLM retrieves relevant documents -> LLM generates a response"},
+      {"id": 3, "text": "Ingest documents from a source -> Index the documents and save to Vector Search -> User submits queries against an LLM -> LLM retrieves relevant documents -> LLM generates a response -> Evaluate model -> Deploy it using Model Serving"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q73",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer who was prototyping an LLM system accidentally ran thousands of inference queries against a Foundation Model endpoint over the weekend. They want to take action to prevent this from unintentionally happening again in the future.\n\nWhat action should they take?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use prompt engineering to instruct the LLM endpoints to refuse too many subsequent queries."},
+      {"id": 1, "text": "Require that all development code which interfaces with a Foundation Model endpoint must be reviewed by a Staff level engineer before execution."},
+      {"id": 2, "text": "Build a pyfunc model which proxies to the Foundation Model endpoint and add throttling within the pyfunc model."},
+      {"id": 3, "text": "Configure rate limiting on the Foundation Model endpoints."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q74",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is setting up a Databricks Vector Search that will lookup news articles by topic within 10 days of the date specified. An example query might be “Tell me about monster truck news around January 5th 1992”. They want to do this with the least amount of effort.\n\nHow can they set up their Vector Search index to support this use case?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Create separate indexes by topic and add a classifier model to appropriately pick the best index."},
+      {"id": 1, "text": "Include metadata columns for article date and topic to support metadata filtering."},
+      {"id": 2, "text": "Pass the query directly to the vector search index and return the best articles."},
+      {"id": 3, "text": "Split articles by 10 day blocks and return the block closest to the query."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q75",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer developed an LLM application using the pay-per-token Foundation Model API. Now that the application is ready to be deployed, they would like to ensure the model endpoint can serve high incoming volumes of requests in production.\n\nWhat should the Generative AI Engineer consider?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Switch to using External Models instead"},
+      {"id": 1, "text": "Throttle the incoming batch of requests manually to avoid rate limiting issues"},
+      {"id": 2, "text": "Change to a model with a fewer number of parameters in order to reduce hardware constraint issues"},
+      {"id": 3, "text": "Deploy the model using provisioned throughput as it comes with performance guarantees"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q76",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer at a home appliance company has been asked to design an LLM based application that accomplishes the following business objective: answer customer questions on home appliances using the associated instruction manuals.\n\nWhich set of high-level tasks should the Generative AI Engineer's system perform?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Split instruction manuals into chunks and embed into a vector store. Use the question to retrieve best matched chunks of manual, and use the LLM to generate a response to the user based upon the manual retrieved."},
+      {"id": 1, "text": "Create an interaction matrix of historical user questions and appliance instruction manuals. Use ALS to factorize the matrix and create embeddings. Calculate the embeddings of new queries and use them to find the best manual. Use an LLM to generate a response to the question based upon the manual retrieved."},
+      {"id": 2, "text": "Calculate averaged embeddings for each instruction manual, compare embeddings to user query to find the best manual. Pass the best manual with user query into an LLM with a large context window to generate a response to the employee."},
+      {"id": 3, "text": " Use an LLM to summarize all of the instruction manuals. Provide summaries of each manual and user query into an LLM with a large context window to generate a response to the user."}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q77",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is developing an LLM application to interact with users to provide personalized movie recommendations.\n\nGiven the potential for malicious user inputs, which technique would be most effective in safeguarding the application?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Reduce the time that the users can interact with the LLM"},
+      {"id": 1, "text": "Increase the amount of compute that powers the LLM to process input faster"},
+      {"id": 2, "text": "Ask the LLM to remind the user that the input is malicious but continue the conversation with the user"},
+      {"id": 3, "text": "Implement a safety filter that detects any harmful inputs and ask the LLM to respond that it is unable to assist"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q78",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer received the following business requirements for an internal chatbot. The internal chatbot needs to know what types of questions the user asks and route them to appropriate models to answer the questions. For example, the user might ask about historical failure rates of a specific electrical part. Another user might ask about how to troubleshoot a piece of electrical equipment.\n\nAvailable data sources include a database of electrical equipment PDF manuals and also a table with information on when an electrical part experiences failure.\n\nWhich workflow supports such a chatbot?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Parse the electrical equipment PDF manuals into a table of question and response pairs. That way, the same chatbot can query tables easily to answer questions about both historical failure rates and equipment troubleshooting."},
+      {"id": 1, "text": "The chatbot should be implemented as a multi-step LLM workflow. First, identify the type of question asked, then route the question to the appropriate model. If it's a historical failure rate question, send the query to a text-to-SQL model. If it's a troubleshooting question, then send the query to another model that summarizes the equipment-specific document and generates the response."},
+      {"id": 2, "text": "There should be two different chatbots handling different types of user queries."},
+      {"id": 3, "text": "The table with electrical part failures should be converted into a text document first. That way, the same chatbot can use the same document retrieval process to generate answers regardless of question types."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q79",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is building a system that will answer questions on currently unfolding news topics. As such, it pulls information from a variety of sources including articles and social media posts. They are concerned about toxic posts on social media causing toxic outputs from their system.\n\nWhich guardrail will limit toxic outputs?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Reduce the amount of context items the system will include in consideration for its response."},
+      {"id": 1, "text": "Use only approved social media and news accounts to prevent unexpected toxic data from getting to the LLM."},
+      {"id": 2, "text": "Log all LLM system responses and perform a batch toxicity analysis monthly."},
+      {"id": 3, "text": "Implement rate limiting."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q80",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer has created a RAG application which can help employees interpret HR documentation. The prototype application is now working with some positive feedback from internal company testers. Now the Generative AI Engineer wants to formally evaluate the system's performance and understand where to focus their efforts to further improve the system\n\nHow should the Generative AI Engineer evaluate the system?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use ROUGE score to comprehensively evaluate the quality of the final generated answers."},
+      {"id": 1, "text": "Use an LLM-as-a-judge to evaluate the quality of the final answers generated."},
+      {"id": 2, "text": "Curate a dataset that can test the retrieval and generation components of the system separately. Use MLflow’s built in evaluation metrics to perform the evaluation on the retrieval and generation components."},
+      {"id": 3, "text": "Benchmark multiple LLMs with the same data and pick the best LLM for the job."}
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  }
+]

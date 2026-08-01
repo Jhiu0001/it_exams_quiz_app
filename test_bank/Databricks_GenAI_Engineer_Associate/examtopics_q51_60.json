@@ -1,0 +1,184 @@
+[
+  {
+    "question_id": "examtopics_q51",
+    "content": [
+      {
+        "type": "text",
+        "value": "Which TWO chain components are required for building a basic LLM-enabled chat application that includes conversational capabilities, knowledge retrieval, and contextual memory? (Choose two.)"
+      }
+    ],
+    "type": "MS",
+    "choices": [
+      {"id": 0, "text": "Vector Stores"},
+      {"id": 1, "text": "Conversation Buffer Memory"},
+      {"id": 2, "text": "External tools"},
+      {"id": 3, "text": "Chat loaders"},
+      {"id": 4, "text": "React Components"}
+    ],
+    "ans_ids": [0,1],
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q52",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer has written scalable PySpark code to ingest unstructured PDF documents and chunk them in preparation for storing in a Databricks Vector Search index. Currently, the two columns of their dataframe include the original filename as a string and an array of text chunks from that document.\n\nWhat set of steps should the Generative AI Engineer perform to store the chunks in a ready-to-ingest manner for Databricks Vector Search?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use PySpark's autoloader to apply a UDF across all chunks, formatting them in a JSON structure for Vector Search ingestion."},
+      {"id": 1, "text": "Flatten the dataframe to one chunk per row, create a unique identifier for each row, and enable change feed on the output Delta table."},
+      {"id": 2, "text": "Utilize the original filename as the unique identifier and save the dataframe as is."},
+      {"id": 3, "text": "Create a unique identifier for each document, flatten the dataframe to one chunk per row and save to an output Delta table."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q53",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is asked to build an LLM application that would excel at code generation. They need to select a model that has been specifically trained to generate code.\n\nWhich model would likely produce the best results out of the box?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "CodeLlama-34b-Instruct-hf"},
+      {"id": 1, "text": "Mixtral-8x7B-v0.1"},
+      {"id": 2, "text": "Llama-2-70b-hf"},
+      {"id": 3, "text": "mpt-7b-8k-instruct"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q54",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer needs to design an LLM pipeline to conduct multi-stage reasoning that leverages external tools. To be effective at this, the LLM will need to plan and adapt actions while performing complex reasoning tasks.\n\nWhich approach will do this?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Train the LLM to generate a single, comprehensive response without interacting with any external tools, relying solely on its pre-trained knowledge."},
+      {"id": 1, "text": "Use a Chain-of-Thought (CoT) prompting technique to guide the LLM through a series of reasoning steps, then manually input the results from external tools for the final answer."},
+      {"id": 2, "text": "Implement a framework like ReAct, which allows the LLM to generate reasoning traces and perform task-specific actions that leverage external tools if necessary."},
+      {"id": 3, "text": "Encourage the LLM to make multiple API calls in sequence without planning or structuring the calls, allowing the LLM to decide when and how to use external tools spontaneously."}
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q55",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is building an LLM to generate article headlines given the article content. However, the initial output from the LLM does not match the desired tone or style.\n\nWhich approach would be most effective for adjusting the LLM's response to achieve the desired response?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Invite users to submit long, rather than concise, questions"},
+      {"id": 1, "text": "Response-generating LLM"},
+      {"id": 2, "text": "Embedding model"},
+      {"id": 3, "text": "Vector database"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q56",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is building an LLM to generate article headlines given the article content. However, the initial output from the LLM does not match the desired tone or style.\n\nWhich approach would be most effective for adjusting the LLM's response to achieve the desired response?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Exclude any article headlines that do not match the desired output"},
+      {"id": 1, "text": "Fine-tune the LLM on a dataset of desired tone and style"},
+      {"id": 2, "text": "Provide the LLM with a prompt that explicitly instructs it to generate text in the desired tone and style"},
+      {"id": 3, "text": "All of the above"}
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q57",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is creating a customer support bot that should respond differently to an end user based on the sentiment in their initial message. For example, if the end user's message was angry, the bot should try to de-escalate their negative sentiments as it solves the customer query. They want to make sure their approach follows best practices.\n\nWhich approach will do this?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use an encoder-only LLM model to both detect sentiment and generate replies based upon the detected sentiment."},
+      {"id": 1, "text": "Implement a RAG architecture for how to respond to users depending on detected sentiment."},
+      {"id": 2, "text": "Use linear regression model to classify sentiment and feed the result to a system prompt for the LLM to respond."},
+      {"id": 3, "text": "Create a chain which first uses an LLM to classify sentiment, then changes system prompt for the customer interaction LLM based upon the initial customer query sentiment."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q58",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is ready to deploy an LLM application written using Foundation Model APIs. They want to follow security best practices for production scenarios.\n\nWhich authentication method should they choose?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use OAuth machine-to-machine authentication"},
+      {"id": 1, "text": "Use an access token belonging to service principals"},
+      {"id": 2, "text": "Use an access token belonging to any workspace user"},
+      {"id": 3, "text": "Use a frequently rotated access token belonging to either a workspace user or a service principal"}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q59",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is developing a RAG system for their company to perform internal document Q&A for structured HR policies, but the answers returned are frequently incomplete and unstructured. It seems that the retriever is not returning all relevant context. The Generative AI Engineer has experimented with different embedding and response generating LLMs but that did not improve results.\n\nWhich TWO options could be used to improve the response quality? (Choose two.)"
+      }
+    ],
+    "type": "MS",
+    "choices": [
+      {"id": 0, "text": "Add the section header as a prefix to chunks"},
+      {"id": 1, "text": "Split the document by sentence"},
+      {"id": 2, "text": "Use a larger embedding model"},
+      {"id": 3, "text": "Increase the document chunk size"},
+      {"id": 4, "text": "Fine tune the response generation model"}
+    ],
+    "ans_ids": [0,3],
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q60",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is building a production-ready LLM system which replies directly to customers. The solution makes use of the Foundation Model API via provisioned throughput. They are concerned that the LLM could potentially respond in a toxic or otherwise unsafe way. They also wish to perform this with the least amount of effort.\n\nWhich approach will do this?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Ask users to report unsafe responses"},
+      {"id": 1, "text": "Host Llama Guard on Foundation Model API and use it to detect unsafe responses."},
+      {"id": 2, "text": "Add some LLM calls to their chain to detect unsafe content before returning text"},
+      {"id": 3, "text": "Add a regex expression on inputs and outputs to detect unsafe responses."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  }
+]

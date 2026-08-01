@@ -1,0 +1,190 @@
+[
+  {
+    "question_id": "examtopics_q61",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer would like an LLM to parse and extract the following information: date, sender email, and order ID. The output should be formatted into JSON. Here's an email sample:"
+      },
+      {
+        "type": "code",
+        "value": "Date: April 16, 2024\nTime: 3:45 PM\nFrom: sarah.lee925@gmail.com\nTo: customer_service@smart_thermostat.com\nSubject: Order update request\n\nHi,\n\nCan I get a status update on my order? The order ID is RE987D.\n\nThank you,\nSarah"
+      },
+      {
+        "type": "text",
+        "value": "They need a prompt that will extract and output the required information in JSON with the highest level of output accuracy.\n\nWhich prompt will do that?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "You will receive customer emails and need to extract date, sender email, and order ID. Return the extracted information in a human-readable format."},
+      {"id": 1, "text": "You will receive customer emails and need to extract date, sender email, and order ID. Return the extracted information in JSON format."},
+      {"id": 2, "text": "You will receive customer emails and need to extract date, sender email, and order ID. Return the extracted information in JSON format. Here's an example: {'date':'April 16, 2024', 'sender_email':'sarah.lee925@gmail.com', 'order_id':'RE987D'}"},
+      {"id": 3, "text": "You will receive customer emails and need to extract date, sender email, and order IYou should return the date, sender email, and order ID information in JSON format."}
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q62",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer has built an LLM-based system that will automatically translate user text between two languages. They now want to benchmark multiple LLM’s on this task and pick the best one. They have an evaluation set with known high quality translation examples. They want to evaluate each LLM using the evaluation set with a performant metric.\n\nWhich metric should they choose for this evaluation?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "BLEU metric"},
+      {"id": 1, "text": "NDCG metric"},
+      {"id": 2, "text": "ROUGE metric"},
+      {"id": 3, "text": "RECALL metric"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q63",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is using an LLM to classify species of edible mushrooms based on text descriptions of certain features. The model is returning accurate responses in testing and the Generative AI Engineer is confident they have the correct list of possible labels, but the output frequently contains additional reasoning in the answer when the Generative AI Engineer only wants to return the label with no additional text.\n\nWhich action should they take to elicit the desired behavior from this LLM?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use few shot prompting to instruct the model on expected output format"},
+      {"id": 1, "text": "Use zero shot prompting to instruct the model on expected output format"},
+      {"id": 2, "text": "Use zero shot chain-of-thought prompting to prevent a verbose output format"},
+      {"id": 3, "text": "Use a system prompt to instruct the model to be succinct in its answer"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q64",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is working with a retail company that wants to enhance its customer experience by automatically handling common customer inquiries. They are working on an LLM-powered AI solution that should improve response times while maintaining a personalized interaction. They want to define the appropriate input and LLM task to do this.\n\nWhich input/output pair will do this?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Input: Customer service chat logs; Output: Group the chat logs by users, followed by summarizing each user's interactions, then respond"},
+      {"id": 1, "text": "Input: Customer service chat logs; Output: Find the answers to similar questions and respond with a summary"},
+      {"id": 2, "text": "Input: Customer reviews; Output: Classify review sentiment"},
+      {"id": 3, "text": "Input: Customer reviews; Output: Group the reviews by users and aggregate per-user average rating, then respond"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q65",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is developing a RAG application and would like to experiment with different embedding models to improve the application performance.\n\nWhich strategy for picking an embedding model should they choose?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Pick an embedding model with multilingual support to support potential multilingual user questions"},
+      {"id": 1, "text": "Pick the most recent and most performant open LLM released at the time"},
+      {"id": 2, "text": "Pick an embedding model trained on related domain knowledge"},
+      {"id": 3, "text": "Pick the embedding model ranked highest on the Massive Text Embedding Benchmark (MTEB) leaderboard hosted by HuggingFace"}
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q66",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer wants their finetuned LLMs in their prod Databricks workspace available for testing in their dev workspace as well. All of their workspaces are Unity Catalog enabled and they are currently logging their models into the Model Registry in MLflow.\n\nWhat is the most cost-effective and secure option for the Generative AI Engineer to accomplish their goal?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use an external model registry which can be accessed from all workspaces."},
+      {"id": 1, "text": "Use MLflow to log the model directly into Unity Catalog, and enable READ access in the dev workspace to the model."},
+      {"id": 2, "text": "Setup a duplicate training pipeline in dev, so that an identical model is available in dev."},
+      {"id": 3, "text": "Setup a script to export the model from prod and import it to dev."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q67",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer has just deployed an LLM application at a manufacturing company that assists with answering customer service inquiries. They need to identify the key enterprise metrics to monitor the application in production.\n\nWhich is NOT a metric they will implement for their customer service LLM application in production?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Massive Multi-task Language Understanding (MMLU) score"},
+      {"id": 1, "text": "Number of customer inquiries processed per unit of time"},
+      {"id": 2, "text": "Factual accuracy of the response"},
+      {"id": 3, "text": "Time taken for LLM to generate a response"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q68",
+    "content": [
+      {
+        "type": "text",
+        "value": "Generative AI Engineer is helping a cinema extend its website’s chat bot to be able to respond to questions about specific showtimes for movies currently playing at their local theater. They already have the location of the user provided by location services to their agent, and a Delta table which is continually updated with the latest showtime information by location. They want to implement this new capability in their RAG application.\n\nWhich option will do this with the least effort and in the most performant way?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Create a Feature Serving Endpoint from a FeatureSpec that references an online store synced from the Delta table. Query the Feature Serving Endpoint as part of the agent logic / tool implementation."},
+      {"id": 1, "text": "Query the Delta table directly via a SQL query constructed from the user's input using a text-to-SQL LLM in the agent logic / tool implementation."},
+      {"id": 2, "text": "Set up a task in Databricks Workflows to write the information in the Delta table periodically to an external database such as MySQL and query the information from there as part of the agent logic / tool implementation."},
+      {"id": 3, "text": "Write the Delta table contents to a text column, then embed those texts using an embedding model and store these in the vector index. Look up the information based on the embedding as part of the agent logic / tool implementation."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q69",
+    "content": [
+      {
+        "type": "text",
+        "value": "Generative AI Engineer needs to build an LLM application that can understand medical documents, including recently published ones. They want to select an open model available on HuggingFace's model hub.\n\nWhich step is most appropriate for selecting an LLM?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Pick any model in the Mistral family, as Mistral models are good with all types of use cases"},
+      {"id": 1, "text": "Select a model based on the highest number of downloads, as this indicates popularity, reliability, and general suitability"},
+      {"id": 2, "text": "Select a model that is most recently uploaded, as this indicates the model is the newest and highly likely to be the most performant"},
+      {"id": 3, "text": "Check for the model and training data description to identify if the model is trained on any medical data."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q70",
+    "content": [
+      {
+        "type": "text",
+        "value": "Generative AI Engineer is building a RAG application that answers questions about technology-related news articles. The source documents may contain a significant amount of irrelevant content, such as advertisements, sports news, or entertainment news.\n\nWhich approach is NOT advisable for building a RAG application focused on answering technology-only questions?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Include in the system prompt that the application is not supposed to answer any questions unrelated to technology."},
+      {"id": 1, "text": "Filter out irrelevant news articles in the retrieval process."},
+      {"id": 2, "text": "Keep all news articles because the RAG application needs to understand non-technological content to avoid answering questions about them."},
+      {"id": 3, "text": "Filter out irrelevant news articles in the upstream document database."}
+    ],
+    "ans_id": 2,
+    "explanation": ""
+  }
+]

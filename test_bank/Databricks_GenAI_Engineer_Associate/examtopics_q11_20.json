@@ -1,0 +1,199 @@
+[
+  {
+    "question_id": "examtopics_q11",
+    "content": [
+      {
+        "type": "text",
+        "value": "What is the most suitable library for building a multi-step LLM-based workflow?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Pandas"},
+      {"id": 1, "text": "TensorFlow"},
+      {"id": 2, "text": "PySpark"},
+      {"id": 3, "text": "LangChain"}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q12",
+    "content": [
+      {
+        "type": "text",
+        "value": "When developing an LLM application, it's crucial to ensure that the data used for training the model complies with licensing requirements to avoid legal risks.\n\nWhich action is NOT appropriate to avoid legal risks?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Reach out to the data curators directly before you have started using the trained model to let them know."},
+      {"id": 1, "text": "Use any available data you personally created which is completely original and you can decide what license to use."},
+      {"id": 2, "text": "Only use data explicitly labeled with an open license and ensure the license terms are followed."},
+      {"id": 3, "text": "Reach out to the data curators directly after you have started using the trained model to let them know."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q13",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is testing a simple prompt template in LangChain using the code below, but is getting an error."
+      },
+      {
+        "type": "code",
+        "value": "from langchain.chains import LLMChain\nfrom langchain_community.llms import OpenAI\nfrom langchain_core.prompts import PromptTemplate\n\nprompt_template ='Tell me a {adjective} joke'\n\nprompt = PromptTemplate (input_variables=['adjective'], template=prompt_template)\n\nllm = LLMChain(prompt=prompt)\n\nllm.generate([{'adjective': 'funny'}])"
+      },
+      {
+        "type": "text",
+        "value": "Assuming the API key was properly defined, what change does the Generative AI Engineer need to make to fix their chain?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "prompt_template = 'Tell me a {adjective} joke.'\n\nprompt = PromptTemplate(input_variables=['adjective'], template=prompt_template)\n\n llm = LLMChain(prompt=prompt)\n\nllm.generate('funny')"},
+      {"id": 1, "text": "prompt_template = 'Tell me a {adjective} joke.'\n\nprompt = PromptTemplate(input_variables=['adjective'], template=prompt_template)\n\n llm = LLMChain(prompt=prompt.format('funny'))\n\nllm.generate()"},
+      {"id": 2, "text": "prompt_template = 'Tell me a {adjective} joke.'\n\nprompt = PromptTemplate(input_variables=['adjective'], template=prompt_template, llm=OpenAI())\n\n llm = LLMChain(prompt=prompt)\n\nllm.generate([{'adjective': 'funny'}])"},
+      {"id": 3, "text": "prompt_template = 'Tell me a {adjective} joke.'\n\nprompt = PromptTemplate(input_variables=['adjective'], template=prompt_template)\n\n llm = LLMChain(llm=OpenAI(), prompt=prompt)\n\nllm.generate([{'adjective': 'funny'}])"}
+
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q14",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer is creating an LLM system that will retrieve news articles from the year 1918 and related to a user's query and summarize them. The engineer has noticed that the summaries are generated well but often also include an explanation of how the summary was generated, which is undesirable.\n\nWhich change could the Generative Al Engineer perform to mitigate this issue?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Split the LLM output by newline characters to truncate away the summarization explanation."},
+      {"id": 1, "text": "Tune the chunk size of news articles or experiment with different embedding models."},
+      {"id": 2, "text": "Revisit their document ingestion logic, ensuring that the news articles are being ingested properly."},
+      {"id": 3, "text": "Provide few shot examples of desired output format to the system and/or user prompt."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q15",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer has developed an LLM application to answer questions about internal company policies. The Generative AI Engineer must ensure that the application doesn't hallucinate or leak confidential data.\n\nWhich approach should NOT be used to mitigate hallucination or confidential data leakage?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Add guardrails to filter outputs from the LLM before it is shown to the user"},
+      {"id": 1, "text": "Fine-tune the model on your data, hoping it will learn what is appropriate and not"},
+      {"id": 2, "text": "Limit the data available based on the user's access level"},
+      {"id": 3, "text": "Use a strong system prompt to ensure the model aligns with your needs."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q16",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer interfaces with an LLM with prompt/response behavior that has been trained on customer calls inquiring about product availability. The LLM is designed to output 'In Stock' if the product is available or only the term 'Out of Stock' if not.\n\nWhich prompt will work to allow the engineer to respond to call classification labels correctly?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Respond with 'In Stock' if the customer asks for a product."},
+      {"id": 1, "text": "You will be given a customer call transcript where the customer asks about product availability. The outputs are either 'In Stock' or 'Out of Stock'. Format the output in JSON, for example: {'call_id': '123', 'label': 'In Stock'}."},
+      {"id": 2, "text": "Respond with 'Out of Stock' if the customer asks for a product."},
+      {"id": 3, "text": "You will be given a customer call transcript where the customer inquires about product availability. Respond with 'In Stock' if the product is available or 'Out of Stock' if not."}
+    ],
+    "ans_id": 3,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q17",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer is tasked with developing a RAG application that will help a small internal group of experts at their company answer specific questions, augmented by an internal knowledge base. They want the best possible quality in the answers, and neither latency nor throughput is a huge concern given that the user group is small and they're willing to wait for the best answer. The topics are sensitive in nature and the data is highly confidential and so, due to regulatory requirements, none of the information is allowed to be transmitted to third parties.\n\nWhich model meets all the Generative Al Engineer's needs in this situation?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Dolly 1.5B"},
+      {"id": 1, "text": "OpenAI GPT-4"},
+      {"id": 2, "text": "BGE-large"},
+      {"id": 3, "text": "Llama2-70B"}
+    ],
+    "ans_id": 3,
+    "explanation": "- A) Dolly is too small so it won't be the best quality.\n- B) OpenAI GPT-4 is high quality but there would be issues around confidentiality\n- C) BGE-large is an embedding model so it's not suitable for answering questions.\n\nBGE Large is an embedding based LLM model (embeddings available to serving endpoints). and it is ideal for retrieval step"
+  },
+  {
+    "question_id": "examtopics_q18",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative Al Engineer would like an LLM to generate formatted JSON from emails. This will require parsing and extracting the following information: order ID, date, and sender email. Here’s a sample email:"
+      },
+      {
+        "type": "code",
+        "value": "Date: April 23, 2024\nTime: 4:22 PM\nFrom: anjali.thayer@computex.org\nTo: cust_service@realtek.com\nSubject: Shipment details\n\nHey there,\n\nI have a shipment (order ID is CD34RFT) can you please send me an update?\n\nThank you,\nAnjali"
+      },
+      {
+        "type": "text",
+        "value": "They will need to write a prompt that will extract the relevant information in JSON format with the highest level of output accuracy.\nWhich prompt will do that?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "You will receive customer emails and need to extract date, sender email, and order ID. You should return the date, sender email, and order ID information in JSON format."},
+      {"id": 1, "text": "You will receive customer emails and need to extract date, sender email, and order ID. Return the extracted information in JSON format.\nHere's an example: {'date': 'April 16, 2024', 'sender_email': 'sarah.lee925@gmail.com', 'order_id': 'RE987D'}"},
+      {"id": 2, "text": "You will receive customer emails and need to extract date, sender email, and order ID. Return the extracted information in a human-readable format."},
+      {"id": 3, "text": "You will receive customer emails and need to extract date, sender email, and order IReturn the extracted information in JSON format."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q19",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer has been asked to build an LLM-based question-answering application. The application should take into account new documents that are frequently published. The engineer wants to build this application with the least cost and least development effort and have it operate at the lowest cost possible.\n\nWhich combination of chaining components and configuration meets these requirements?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "For the application a prompt, a retriever, and an LLM are required. The retriever output is inserted into the prompt which is given to the LLM to generate answers."},
+      {"id": 1, "text": "The LLM needs to be frequently updated with the new documents in order to provide most up-to-date answers."},
+      {"id": 2, "text": "For the question-answering application, prompt engineering and an LLM are required to generate answers."},
+      {"id": 3, "text": "For the application a prompt, an agent and a fine-tuned LLM are required. The agent is used by the LLM to retrieve relevant content that is inserted into the prompt which is given to the LLM to generate answers."}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q20",
+    "content": [
+      {
+        "type": "text",
+        "value": "A Generative AI Engineer is creating an agent-based LLM system for their favorite monster truck team. The system can answer text based questions about the monster truck team, lookup event dates via an API call, or query tables on the team’s latest standings.\n\nHow could the Generative AI Engineer best design these capabilities into their system?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Ingest PDF documents about the monster truck team into a vector store and query it in a RAG architecture."},
+      {"id": 1, "text": "Write a system prompt for the agent listing available tools and bundle it into an agent system that runs a number of calls to solve a query."},
+      {"id": 2, "text": "Instruct the LLM to respond with 'RAG', 'API', or 'TABLE' depending on the query, then use text parsing and conditional statements to resolve the query."},
+      {"id": 3, "text": "Build a system prompt with all possible event dates and table information in the system prompt. Use a RAG architecture to lookup generic text questions and otherwise leverage the information in the system prompt."}
+    ],
+    "ans_id": 1,
+    "explanation": ""
+  }
+]

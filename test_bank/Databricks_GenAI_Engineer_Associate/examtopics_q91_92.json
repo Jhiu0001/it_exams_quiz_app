@@ -1,0 +1,38 @@
+[
+  {
+    "question_id": "examtopics_q91",
+    "content": [
+      {
+        "type": "text",
+        "value": "A team uses Mosaic AI Vector Search to retrieve documents for their Retrieval-Augmented Generation (RAG) pipeline. The search query returns five relevant documents, and the first three are added to the prompt as context. Performance evaluation with Agent Evaluation shows that some lower-ranked retrieved documents have higher context relevancy scores than higher-ranked documents.\n\nWhich option should the team consider to optimize this workflow?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Use a reranker to order the documents based on the relevance scores."},
+      {"id": 1, "text": "Modify the prompt to instruct the LLM to order the documents based on the relevance scores."},
+      {"id": 2, "text": "Use a different embedding model for computing document embeddings."},
+      {"id": 3, "text": "Increase the number of documents added to the prompt to improve context relevance."}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  },
+  {
+    "question_id": "examtopics_q92",
+    "content": [
+      {
+        "type": "text",
+        "value": "A generative AI engineer is deploying an AI agent authored with MLflow's ChatAgent interface for a retail company's customer support system on Databricks. The agent must handle thousands of inquiries daily, and the engineer needs to track its performance and quality in real-time to ensure it meets service-level agreements.\n\nWhich metrics are automatically captured by default and made available for monitoring when the agent is deployed using the Mosaic AI Agent Framework?"
+      }
+    ],
+    "type": "MC",
+    "choices": [
+      {"id": 0, "text": "Operational metrics like request volume, latency, and errors"},
+      {"id": 1, "text": "Quality metrics like correctness and guideline adherence"},
+      {"id": 2, "text": "Both operational and quality metrics"},
+      {"id": 3, "text": "No metrics are automatically captured"}
+    ],
+    "ans_id": 0,
+    "explanation": ""
+  }
+]

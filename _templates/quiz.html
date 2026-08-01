@@ -85,27 +85,38 @@
 </head>
 
 <body>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
 <div class="quiz-container">
     <p style="font-size: 0.9em; color: #777; margin-bottom: 5px;">
-    Question {{ current_number }} of {{ total_questions }}
+        Question {{ current_number }} of {{ total_questions }}
     </p>
 
     <div class="question-text">
         {% if question.content %}
             {% for block in question.content %}
-                
+
                 {% if block.type == "text" %}
                     <p>{{ block.value | replace('\n', '<br>') | safe }}</p>
 
                 {% elif block.type == "code" %}
                     <pre class="code-block">{{ block.value.strip() }}</pre>
 
+                {% elif block.type == "mermaid" %}
+                    <pre class="mermaid">
+{{ block.value.strip() }}
+                    </pre>
+
                 {% endif %}
 
             {% endfor %}
         {% else %}
             <!-- fallback for old questions -->
-            {{ question.question  | replace('\n', '<br>') | safe }}
+            {{ question.question | replace('\n', '<br>') | safe }}
         {% endif %}
     </div>
 
